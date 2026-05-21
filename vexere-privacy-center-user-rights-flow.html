@@ -82,7 +82,9 @@
       <div class="checkrow"><span class="box"></span><div><b>Dữ liệu tiếp thị và cá nhân hóa</b><p>Lịch sử gợi ý, phân nhóm marketing, ưu đãi.</p></div></div>
       <div class="checkrow"><span class="box"></span><div><b>Dữ liệu hành vi không thiết yếu</b><p>Analytics định danh, hoạt động nghiên cứu sản phẩm chưa ẩn danh.</p></div></div>
       <div class="checkrow"><span class="box"></span><div><b>Thông tin tài khoản</b><p>Có thể dẫn tới đóng tài khoản sau khi hoàn tất xác minh.</p></div></div>
-      <div class="warn"><b>Lưu ý về dữ liệu giao dịch</b><br>Một số dữ liệu liên quan đến đặt vé, thanh toán, hóa đơn/chứng từ, khiếu nại hoặc tranh chấp có thể tiếp tục được lưu giữ theo yêu cầu pháp luật, kể cả sau khi bạn gửi yêu cầu xóa dữ liệu.<br><br>Trong thời gian lưu giữ, Vexere sẽ áp dụng các biện pháp hạn chế xử lý phù hợp khi cần thiết.</div>
+      <div class="warn"><b>Lưu ý về dữ liệu giao dịch</b><br>Một số dữ liệu liên quan đến giao dịch, thanh toán hoặc hóa đơn có thể tiếp tục được lưu giữ theo yêu cầu pháp luật hoặc để xử lý khiếu nại/tranh chấp khi cần thiết.
+
+[Tìm hiểu thêm]</div>
       <textarea rows="4" placeholder="Lý do hoặc ghi chú thêm, nếu có"></textarea>
       <input class="input" value="tuan.hoang@vexere.com" />
       <div style="height:86px"></div>
@@ -105,9 +107,14 @@
       <tr><td>Cung cấp sản phẩm, dịch vụ: đặt vé, thanh toán, hoàn/hủy, CSKH</td><td><span class="tag red">Không áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Cần thiết để thực hiện dịch vụ/giao dịch; không nên thiết kế như optional consent.</td></tr>
       <tr><td>Nghĩa vụ pháp lý: kế toán, thuế, hóa đơn, chứng từ, tranh chấp, yêu cầu CQNN</td><td><span class="tag red">Không áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Tiếp tục lưu giữ/xử lý trong phạm vi pháp luật yêu cầu hoặc bảo vệ quyền lợi hợp pháp.</td></tr>
       <tr><td>Tiếp thị, quảng cáo, giới thiệu sản phẩm</td><td><span class="tag green">Áp dụng</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag green">Áp dụng</span></td><td>Nên cho user tắt/rút lại rõ ràng, dễ thao tác.</td></tr>
-      <tr><td>Gợi ý, cá nhân hóa trải nghiệm</td><td><span class="tag green">Áp dụng</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Có thể dừng dùng dữ liệu định danh cho đề xuất nội dung.</td></tr>
-      <tr><td>Nghiên cứu, đo lường, cải thiện ứng dụng</td><td><span class="tag blue">Tùy basis</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Nên ưu tiên dữ liệu tổng hợp/ẩn danh; nếu còn định danh thì cho request hạn chế.</td></tr>
-      <tr><td>Chia sẻ cho bên thứ ba</td><td><span class="tag green">Nếu không thiết yếu</span></td><td><span class="tag green">Nếu không thiết yếu</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Tách bên thứ ba thiết yếu cho giao dịch với bên thứ ba phục vụ marketing/analytics.</td></tr>
+      <tr><td>Gợi ý, cá nhân hóa trải nghiệm</td><td><span class="tag green">Áp dụng</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Vexere có thể ngừng sử dụng dữ liệu gắn với tài khoản của bạn để cá nhân hóa nội dung, đề xuất hoặc ưu đãi phù hợp.</td></tr>
+      <tr><td>Nghiên cứu, đo lường, cải thiện ứng dụng</td><td><span class="tag orange">Có điều kiện</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Một số hoạt động phân tích và cải thiện sản phẩm có thể tiếp tục được thực hiện bằng dữ liệu tổng hợp, dữ liệu đã được ẩn danh hoặc dữ liệu cần thiết để vận hành và bảo mật hệ thống theo quy định áp dụng. Nếu dữ liệu vẫn gắn với tài khoản hoặc danh tính người dùng, người dùng có thể yêu cầu hạn chế xử lý theo quy định áp dụng.</td></tr>
+      <tr><td>Chia sẻ cho bên thứ ba</td><td><span class="tag green">Nếu không thiết yếu</span></td><td><span class="tag green">Nếu không thiết yếu</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Cần phân biệt:
+
+(1)bên thứ ba cần thiết để cung cấp dịch vụ hoặc xử lý giao dịch; và
+(2)bên thứ ba phục vụ tiếp thị, quảng cáo hoặc phân tích hành vi.
+
+Đối với nhóm không thiết yếu, người dùng nên có quyền rút lại sự đồng ý hoặc yêu cầu hạn chế xử lý khi phù hợp.</td></tr>
     </tbody>
   </table></div>
 </div>

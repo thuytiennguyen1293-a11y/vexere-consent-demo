@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vexere Privacy Center – Expected Product Flow v2</title>
+  <style>
+    :root{
+      --blue:#2477e6;--navy:#0b376d;--ink:#101828;--muted:#667085;--line:#e4e7ec;--bg:#eaf3ff;--card:#fff;--green:#12b76a;--orange:#f79009;--red:#f04438;--purple:#7a5cff;
+    }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:var(--ink)}
+    .page{padding:32px 36px 56px}.hero{max-width:1320px;margin:0 auto 28px;background:#fff;border:1px solid #d0e2ff;border-radius:24px;padding:24px 28px;box-shadow:0 18px 50px rgba(16,24,40,.08)}
+    h1{font-size:28px;margin:0 0 8px;color:#0b376d}.subtitle{margin:0;color:#475467;line-height:1.5}.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.chip{border:1px solid #b8d3ff;background:#f5f9ff;color:#0b376d;border-radius:999px;padding:8px 12px;font-weight:700;font-size:13px}
+    .section-title{max-width:1320px;margin:28px auto 14px;font-size:18px;color:#0b376d;text-transform:uppercase;letter-spacing:.04em}
+    .flow{max-width:1320px;margin:auto;display:flex;gap:26px;align-items:flex-start;overflow-x:auto;padding-bottom:12px}.phone{width:308px;min-width:308px;height:680px;background:#101828;border-radius:34px;padding:14px;box-shadow:0 18px 40px rgba(16,24,40,.20)}
+    .screen{height:100%;background:#f8fafc;border-radius:24px;overflow:hidden;position:relative}.bar{height:64px;background:var(--blue);color:white;display:flex;align-items:center;padding:0 18px;gap:12px;font-weight:800;font-size:17px}.back{font-size:25px}.content{height:calc(100% - 64px);overflow:auto;padding:18px;background:#fbfcff}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:14px}.card h3{font-size:14px;margin:0 0 12px;color:#0b376d;text-transform:uppercase;letter-spacing:.06em}.row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #eef2f6}.row:last-child{border-bottom:0}.row b{display:block;font-size:15px}.row small{display:block;color:var(--muted);line-height:1.35;margin-top:4px}.chev{width:28px;height:28px;border-radius:50%;background:#edf2ff;color:#3d62d9;display:grid;place-items:center;font-weight:900}.info{border:1px solid #b9dcff;background:#eff8ff;color:#0b4a8b;border-radius:12px;padding:12px;font-size:13px;line-height:1.45;margin-bottom:14px}.warn{border:1px solid #fedf89;background:#fffaeb;color:#93370d;border-radius:12px;padding:12px;font-size:13px;line-height:1.45;margin-bottom:14px}.danger{border:1px solid #fecdca;background:#fff5f4;color:#b42318;border-radius:12px;padding:12px;font-size:13px;line-height:1.45;margin-bottom:14px}
+    .checkrow{display:grid;grid-template-columns:24px 1fr;gap:10px;margin:0 0 14px}.box{width:20px;height:20px;border:2px solid #98a2b3;border-radius:4px;background:#fff;margin-top:2px}.box.checked{background:#d9e8fb;border-color:#c6d3e1;position:relative}.box.checked:after{content:'✓';color:white;font-weight:900;position:absolute;left:3px;top:-1px}.checkrow b{font-size:14px}.checkrow p{margin:3px 0 0;color:#344054;font-size:12px;line-height:1.45}.lock{font-size:11px;color:#667085;margin-top:4px}.input,textarea{width:100%;border:1px solid #d0d5dd;border-radius:10px;background:white;padding:12px;font:inherit;margin:8px 0 12px}.footer{position:absolute;left:0;right:0;bottom:0;padding:12px 18px 18px;background:linear-gradient(180deg,rgba(248,250,252,0),#f8fafc 18%)}.btn{width:100%;height:46px;border:0;border-radius:10px;background:var(--navy);color:#fff;font-weight:800;font-size:15px}.btn.red{background:#e5484d}.btn.outline{background:white;color:#0b376d;border:1px solid #d0d5dd}.twobtn{display:grid;grid-template-columns:1fr 1fr;gap:12px}.success{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;background:white}.tick{width:76px;height:76px;border-radius:50%;background:#86e0ad;color:white;font-size:52px;line-height:76px;margin:0 auto 18px}.success h2{font-size:18px;margin:0 0 8px}.success p{font-size:13px;color:#475467;line-height:1.45;margin:0 0 20px}.arrow{min-width:36px;align-self:center;color:var(--purple);font-size:34px;font-weight:900}.notegrid{max-width:1320px;margin:10px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.note{background:white;border:1px solid #d0e2ff;border-radius:18px;padding:18px;box-shadow:0 12px 30px rgba(16,24,40,.05)}.note h3{margin:0 0 10px;color:#0b376d}.note p,.note li{font-size:14px;color:#475467;line-height:1.55}.note ul{padding-left:18px;margin:8px 0 0}.tablewrap{max-width:1320px;margin:0 auto;background:#fff;border-radius:18px;overflow:hidden;border:1px solid #d0e2ff}.table{width:100%;border-collapse:collapse}.table th{background:#0b376d;color:#fff;text-align:left;padding:12px;font-size:13px}.table td{border-top:1px solid #eef2f6;padding:12px;vertical-align:top;font-size:13px;line-height:1.45}.tag{display:inline-block;padding:4px 8px;border-radius:999px;font-weight:800;font-size:12px}.tag.green{background:#ecfdf3;color:#027a48}.tag.orange{background:#fffaeb;color:#b54708}.tag.red{background:#fff1f3;color:#c01048}.tag.blue{background:#eff8ff;color:#175cd3}
+    @media(max-width:900px){.notegrid{grid-template-columns:1fr}.page{padding:18px}.phone{width:292px;min-width:292px}.hero{padding:18px}}
+  </style>
+</head>
+<body>
+<div class="page">
+  <section class="hero">
+    <h1>Privacy Center – giao diện kỳ vọng cho Product</h1>
+    
+
+  <h2 class="section-title">A. Privacy Center trong Cài đặt</h2>
+  <div class="flow">
+    <div class="phone"><div class="screen"><div class="bar"><span class="back">‹</span> Quyền riêng tư & dữ liệu</div><div class="content">
+      <div class="card"><h3>Tùy chọn dữ liệu</h3>
+        <div class="row"><div><b>Gợi ý phù hợp hơn</b><small>Bật/tắt cá nhân hóa trải nghiệm.</small></div><div class="chev">›</div></div>
+        <div class="row"><div><b>Ưu đãi & thông báo</b><small>Email, SMS, push khuyến mại.</small></div><div class="chev">›</div></div>
+        <div class="row"><div><b>Cải thiện ứng dụng</b><small>Analytics và nghiên cứu sản phẩm.</small></div><div class="chev">›</div></div>
+      </div>
+      <div class="card"><h3>Quyền dữ liệu cá nhân</h3>
+        <div class="row"><div><b>Xem hoặc chỉnh sửa dữ liệu</b><small>Cập nhật thông tin tài khoản, liên hệ.</small></div><div class="chev">›</div></div>
+        <div class="row"><div><b>Trích xuất dữ liệu</b><small>Nhận bản sao dữ liệu qua email.</small></div><div class="chev">›</div></div>
+        <div class="row"><div><b>Rút lại đồng ý</b><small>Dừng các mục đích xử lý dựa trên đồng ý.</small></div><div class="chev">›</div></div>
+        <div class="row"><div><b>Hạn chế xử lý</b><small>Yêu cầu giới hạn phạm vi/mục đích xử lý.</small></div><div class="chev">›</div></div>
+        <div class="row"><div><b>Yêu cầu xóa dữ liệu</b><small>Gửi yêu cầu xóa hoặc đóng tài khoản.</small></div><div class="chev">›</div></div>
+        <div class="row"><div><b>Lịch sử yêu cầu</b><small>Theo dõi trạng thái xử lý yêu cầu.</small></div><div class="chev">›</div></div>
+      </div>
+    </div></div></div>
+  </div>
+
+  <h2 class="section-title">B. Màn hình 1 – Rút lại đồng ý</h2>
+  <div class="flow">
+    <div class="phone"><div class="screen"><div class="bar"><span class="back">‹</span> Rút lại đồng ý</div><div class="content">
+      <div class="info">Bạn có thể rút lại sự đồng ý đối với các mục đích xử lý không bắt buộc. Việc rút lại chỉ áp dụng từ thời điểm yêu cầu được ghi nhận và không ảnh hưởng đến hoạt động xử lý hợp pháp trước đó.</div>
+      <div class="checkrow"><span class="box checked"></span><div><b>Cung cấp sản phẩm, dịch vụ</b><p>Bắt buộc để đặt vé, thanh toán, hoàn/hủy, chăm sóc khách hàng.</p><div class="lock">Không thể rút lại tại đây vì đây là xử lý cần thiết cho dịch vụ.</div></div></div>
+      <div class="checkrow"><span class="box checked"></span><div><b>Nghĩa vụ pháp lý</b><p>Xử lý/lưu trữ theo yêu cầu pháp luật về kế toán, thuế, giao dịch điện tử, khiếu nại, tranh chấp hoặc yêu cầu của cơ quan có thẩm quyền.</p><div class="lock">Không phụ thuộc vào đồng ý riêng của user.</div></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Tiếp thị, quảng cáo, giới thiệu sản phẩm</b><p>Dừng dùng dữ liệu cho email/SMS/push khuyến mại và giới thiệu dịch vụ.</p></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Gợi ý và cá nhân hóa trải nghiệm</b><p>Dừng dùng hành vi đặt vé/tìm kiếm để đề xuất nội dung phù hợp.</p></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Nghiên cứu, đo lường, cải thiện ứng dụng</b><p>Dừng dùng dữ liệu định danh cho phân tích sản phẩm, trừ dữ liệu đã ẩn danh/tổng hợp.</p></div></div>
+      <input class="input" value="tuan.hoang@vexere.com" />
+      <div style="height:80px"></div>
+      <div class="footer"><button class="btn">Gửi yêu cầu rút lại đồng ý</button></div>
+    </div></div></div><div class="arrow">→</div>
+    <div class="phone"><div class="screen"><div class="success"><div><div class="tick">✓</div><h2>Đã ghi nhận yêu cầu</h2><p>Vexere sẽ cập nhật tùy chọn đồng ý của bạn và gửi email xác nhận sau khi hoàn tất.</p><button class="btn">Đã hiểu</button><p style="font-size:11px;margin-top:12px">Thời điểm yêu cầu: 18:00 · T4, 25/03/2026</p></div></div></div></div>
+  </div>
+
+  <h2 class="section-title">C. Màn hình 2 – Hạn chế xử lý</h2>
+  <div class="flow">
+    <div class="phone"><div class="screen"><div class="bar"><span class="back">‹</span> Hạn chế xử lý</div><div class="content">
+      <div class="info">Bạn có thể yêu cầu Vexere hạn chế xử lý dữ liệu cá nhân khi có nghi ngờ về phạm vi, mục đích xử lý hoặc tính chính xác của dữ liệu. Yêu cầu sẽ được xem xét theo quy định pháp luật và thỏa thuận áp dụng.</div>
+      <div class="checkrow"><span class="box"></span><div><b>Hạn chế dùng dữ liệu để cá nhân hóa</b><p>Không dùng lịch sử tìm kiếm/đặt vé để đề xuất tuyến, nhà xe, ưu đãi phù hợp.</p></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Hạn chế dùng dữ liệu cho tiếp thị</b><p>Không dùng dữ liệu để phân nhóm khách hàng hoặc gửi nội dung quảng cáo.</p></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Hạn chế chia sẻ cho đối tác không thiết yếu</b><p>Không chia sẻ dữ liệu cho bên thứ ba nếu việc chia sẻ không cần để cung cấp dịch vụ hoặc thực hiện nghĩa vụ pháp lý.</p></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Tạm hạn chế xử lý do dữ liệu chưa chính xác</b><p>Áp dụng khi bạn nghi ngờ dữ liệu cá nhân đang sai và cần Vexere kiểm tra/cập nhật.</p></div></div>
+      <textarea rows="4" placeholder="Lý do hoặc phạm vi bạn muốn hạn chế xử lý, nếu có"></textarea>
+      <input class="input" value="tuan.hoang@vexere.com" />
+      <div style="height:80px"></div>
+      <div class="footer"><button class="btn">Gửi yêu cầu hạn chế xử lý</button></div>
+    </div></div></div><div class="arrow">→</div>
+    <div class="phone"><div class="screen"><div class="success"><div><div class="tick">✓</div><h2>Đã tiếp nhận yêu cầu</h2><p>Vexere sẽ kiểm tra phạm vi yêu cầu và phản hồi kết quả xử lý qua email của bạn.</p><button class="btn">Đã hiểu</button><p style="font-size:11px;margin-top:12px">Thời điểm yêu cầu: 18:00 · T4, 25/03/2026</p></div></div></div></div>
+  </div>
+
+  <h2 class="section-title">D. Màn hình 3 – Yêu cầu xóa dữ liệu</h2>
+  <div class="flow">
+    <div class="phone"><div class="screen"><div class="bar"><span class="back">‹</span> Yêu cầu xóa dữ liệu</div><div class="content">
+      <div class="warn">Một số dữ liệu có thể tiếp tục được lưu trữ nếu cần để xử lý giao dịch, hóa đơn/chứng từ, nghĩa vụ pháp lý, khiếu nại, tranh chấp hoặc yêu cầu của cơ quan có thẩm quyền.</div>
+      <div class="checkrow"><span class="box"></span><div><b>Dữ liệu tiếp thị và cá nhân hóa</b><p>Lịch sử gợi ý, phân nhóm marketing, ưu đãi.</p></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Dữ liệu hành vi không thiết yếu</b><p>Analytics định danh, hoạt động nghiên cứu sản phẩm chưa ẩn danh.</p></div></div>
+      <div class="checkrow"><span class="box"></span><div><b>Thông tin tài khoản</b><p>Có thể dẫn tới đóng tài khoản sau khi hoàn tất xác minh.</p></div></div>
+      <div class="checkrow"><span class="box checked"></span><div><b>Dữ liệu giao dịch cần lưu giữ</b><p>Đặt vé, thanh toán, hoàn/hủy, hóa đơn: không xóa ngay nếu còn nghĩa vụ lưu trữ.</p><div class="lock">Vexere có thể khóa, hạn chế xử lý hoặc ẩn danh khi phù hợp.</div></div></div>
+      <textarea rows="4" placeholder="Lý do hoặc ghi chú thêm, nếu có"></textarea>
+      <input class="input" value="tuan.hoang@vexere.com" />
+      <div style="height:86px"></div>
+      <div class="footer"><button class="btn red">Gửi yêu cầu xóa dữ liệu</button></div>
+    </div></div></div><div class="arrow">→</div>
+    <div class="phone"><div class="screen"><div class="success"><div><div class="tick">✓</div><h2>Đã tiếp nhận yêu cầu xóa</h2><p>Vexere sẽ xác minh, rà soát dữ liệu có thể xóa và thông báo kết quả qua email.</p><button class="btn">Đã hiểu</button><p style="font-size:11px;margin-top:12px">Thời điểm yêu cầu: 18:00 · T4, 25/03/2026</p></div></div></div></div>
+  </div>
+
+  <h2 class="section-title">E. Ghi chú pháp lý cho Product/Design</h2>
+  <div class="notegrid">
+    <div class="note"><h3>1. “Nghĩa vụ pháp lý” là gì?</h3><p>Là các hoạt động xử lý/lưu trữ dữ liệu mà Vexere cần thực hiện để tuân thủ pháp luật hoặc phục vụ yêu cầu pháp lý hợp lệ. Ví dụ: lưu dữ liệu đặt vé, thanh toán, hóa đơn/chứng từ, khiếu nại, đối soát, tranh chấp, phòng chống gian lận hoặc cung cấp thông tin cho cơ quan có thẩm quyền.</p></div>
+    <div class="note"><h3>2. Vì sao không cho user tắt?</h3><p>Nhóm này không vận hành dựa trên consent marketing. Nếu cho tắt toàn bộ, Vexere có thể không thể cung cấp dịch vụ, không thể xử lý giao dịch hoặc vi phạm nghĩa vụ lưu trữ/chứng minh theo pháp luật.</p></div>
+    <div class="note"><h3>3. Cách diễn đạt trên UI</h3><p>Không nên viết “không cho xóa” quá cứng. Nên viết: “Một số dữ liệu có thể tiếp tục được lưu trữ nếu pháp luật yêu cầu hoặc nếu cần để xử lý giao dịch, khiếu nại, tranh chấp”. Cách này đúng hơn và ít gây phản cảm.</p></div>
+  </div>
+
+  <h2 class="section-title">F. Mapping quyền user vào nhóm dữ liệu/mục đích</h2>
+  <div class="tablewrap"><table class="table">
+    <thead><tr><th>Nhóm dữ liệu / mục đích</th><th>Rút lại đồng ý</th><th>Hạn chế xử lý</th><th>Yêu cầu xóa</th><th>Ghi chú legal wording</th></tr></thead>
+    <tbody>
+      <tr><td>Cung cấp sản phẩm, dịch vụ: đặt vé, thanh toán, hoàn/hủy, CSKH</td><td><span class="tag red">Không áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Cần thiết để thực hiện dịch vụ/giao dịch; không nên thiết kế như optional consent.</td></tr>
+      <tr><td>Nghĩa vụ pháp lý: kế toán, thuế, hóa đơn, chứng từ, tranh chấp, yêu cầu CQNN</td><td><span class="tag red">Không áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Tiếp tục lưu giữ/xử lý trong phạm vi pháp luật yêu cầu hoặc bảo vệ quyền lợi hợp pháp.</td></tr>
+      <tr><td>Tiếp thị, quảng cáo, giới thiệu sản phẩm</td><td><span class="tag green">Áp dụng</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag green">Áp dụng</span></td><td>Nên cho user tắt/rút lại rõ ràng, dễ thao tác.</td></tr>
+      <tr><td>Gợi ý, cá nhân hóa trải nghiệm</td><td><span class="tag green">Áp dụng</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Có thể dừng dùng dữ liệu định danh cho đề xuất nội dung.</td></tr>
+      <tr><td>Nghiên cứu, đo lường, cải thiện ứng dụng</td><td><span class="tag blue">Tùy basis</span></td><td><span class="tag green">Áp dụng</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Nên ưu tiên dữ liệu tổng hợp/ẩn danh; nếu còn định danh thì cho request hạn chế.</td></tr>
+      <tr><td>Chia sẻ cho bên thứ ba</td><td><span class="tag green">Nếu không thiết yếu</span></td><td><span class="tag green">Nếu không thiết yếu</span></td><td><span class="tag orange">Có điều kiện</span></td><td>Tách bên thứ ba thiết yếu cho giao dịch với bên thứ ba phục vụ marketing/analytics.</td></tr>
+    </tbody>
+  </table></div>
+</div>
+</body>
+</html>

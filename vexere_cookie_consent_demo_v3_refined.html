@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vexere Cookie Consent Demo</title>
+  <style>
+    :root{
+      --vx-blue:#1769d2;
+      --vx-blue-2:#0f58bd;
+      --vx-pink:#c0267f;
+      --vx-pink-soft:#fff0f8;
+      --bg:#eef3f8;
+      --ink:#22262f;
+      --muted:#596273;
+      --line:#e4e8ef;
+      --soft:#f7f8fb;
+      --card:#fff;
+      --good:#147a4b;
+      --shadow:0 22px 70px rgba(14,23,42,.22);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh}
+    button{font-family:inherit;cursor:pointer}
+    a{color:var(--vx-blue);font-weight:750;text-decoration:none}
+
+    .site{min-height:100vh;background:linear-gradient(180deg,#f9fbff 0%,#eef4fb 100%)}
+    .topbar{height:68px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 42px;position:sticky;top:0;z-index:5}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;color:var(--vx-blue);font-size:22px;letter-spacing:-.4px}.logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1769d2,#66a6ff);display:grid;place-items:center;color:#fff;font-weight:900}.nav{display:flex;gap:26px;color:#667085;font-size:14px;font-weight:700}.hero{max-width:1180px;margin:0 auto;padding:68px 24px 120px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}.hero h1{font-size:56px;line-height:1.02;letter-spacing:-2.2px;margin-bottom:20px}.hero p{font-size:17px;color:#667085;line-height:1.7;max-width:660px}.hero-actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}.btn{border:none;border-radius:14px;min-height:48px;padding:0 20px;font-size:14px;font-weight:850}.btn.primary{background:var(--vx-blue);color:#fff}.btn.secondary{background:#fff;color:#344054;border:1px solid #d0d5dd}.mock-card{background:#fff;border:1px solid #e6ebf3;border-radius:30px;padding:22px;box-shadow:0 22px 60px rgba(15,23,42,.12)}.route-card{border-radius:24px;background:linear-gradient(135deg,#1769d2,#75b7ff);color:#fff;padding:28px;min-height:280px;display:flex;flex-direction:column;justify-content:end}.route-card h2{font-size:30px;letter-spacing:-1px;margin-bottom:10px}.route-card p{color:rgba(255,255,255,.88);font-size:14px}.product-note{max-width:1180px;margin:-62px auto 80px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.note{background:#fff;border:1px solid #e7ebf2;border-radius:20px;padding:18px;box-shadow:0 10px 28px rgba(15,23,42,.06)}.note b{display:block;font-size:14px;margin-bottom:8px}.note p{font-size:13px;line-height:1.55;color:#667085}
+
+    .overlay{position:fixed;inset:0;background:rgba(31,41,55,.62);backdrop-filter:blur(2px);display:none;align-items:center;justify-content:center;padding:28px;z-index:20}.overlay.show{display:flex}.modal{width:min(1040px,100%);max-height:92vh;background:#fff;border-radius:2px;box-shadow:var(--shadow);position:relative;overflow:hidden;animation:pop .22s ease-out}@keyframes pop{from{transform:translateY(12px) scale(.985);opacity:.3}to{transform:none;opacity:1}}.modal-header{padding:34px 58px 22px;border-bottom:1px solid var(--line);position:relative}.modal-title{font-size:30px;letter-spacing:-.9px;margin-bottom:10px}.modal-desc{font-size:15px;line-height:1.65;color:#475467;max-width:880px}.x{position:absolute;right:28px;top:24px;border:none;background:transparent;color:#a3a8b3;font-size:42px;line-height:1}.tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}.tab{height:62px;background:#f6f7f9;border:none;border-top:3px solid transparent;font-size:15px;font-weight:900;text-transform:uppercase;letter-spacing:.02em;color:#1f2937}.tab.active{background:#fff;border-top-color:var(--vx-pink);color:var(--vx-pink)}.panel{height:min(56vh,540px);overflow-y:auto;background:#f3f4f6;padding:28px 58px}.panel::-webkit-scrollbar{width:8px}.panel::-webkit-scrollbar-thumb{background:var(--vx-pink);border-radius:999px}.about-text{background:#f3f4f6;color:#3f4653;line-height:1.75;font-size:15px;max-width:870px;margin:18px auto}.about-text p{margin-bottom:16px}.about-text p:last-child{margin-bottom:0}.category{border-bottom:1px solid #dfe3ea;padding:23px 0}.category:first-child{padding-top:6px}.cat-main{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}.cat-title{font-size:17px;font-weight:900;margin-bottom:7px}.cat-desc{font-size:14px;line-height:1.55;color:#3f4653;max-width:730px}.status-chip{font-size:11px;font-weight:900;border-radius:999px;padding:7px 10px;background:#e8f5ee;color:var(--good);white-space:nowrap}.status-chip.locked{background:#eef0f3;color:#667085}.show-cookies{margin-top:13px;border:none;background:transparent;color:var(--vx-pink);font-weight:900;font-size:13px;text-transform:uppercase}.cookie-table{display:none;margin-top:16px;background:#fff;border:1px solid #d8dde6;border-radius:10px;overflow:hidden}.cookie-table.open{display:block}.cookie-table table{width:100%;border-collapse:collapse;font-size:13px}.cookie-table th{background:#f7f8fb;text-align:left;padding:12px;color:#184066}.cookie-table td{padding:12px;border-top:1px solid #e4e8ef;vertical-align:top;line-height:1.45}.toggle{width:48px;height:28px;border-radius:999px;background:#cfd4dc;position:relative;display:inline-block}.toggle input{display:none}.toggle span{position:absolute;width:22px;height:22px;border-radius:50%;left:3px;top:3px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.18);transition:left .22s ease, box-shadow .22s ease, transform .22s ease}.toggle input:checked + span{left:23px;box-shadow:0 2px 10px rgba(23,105,210,.30)}.toggle:has(input:checked){background:var(--vx-blue);box-shadow:0 0 0 3px rgba(23,105,210,.10)}.footer-actions{display:grid;grid-template-columns:1fr 1.18fr 1.18fr;gap:12px;padding:16px 22px;background:#fff;border-top:1px solid var(--line)}.action{height:46px;border-radius:0;border:1px solid #424854;background:#fff;color:#3f4653;font-weight:900;text-transform:uppercase;letter-spacing:.02em}.action.accept{background:var(--vx-pink);border-color:var(--vx-pink);color:#fff}.action.save{background:#f3f7ff;border-color:#b9cef2;color:var(--vx-blue)}.mini-summary{position:fixed;right:22px;bottom:22px;background:#101828;color:#fff;border-radius:18px;padding:16px 18px;width:min(420px,calc(100vw - 44px));box-shadow:0 18px 45px rgba(15,23,42,.22);display:none;z-index:25}.mini-summary.show{display:block}.mini-summary b{display:block;margin-bottom:6px}.mini-summary p{font-size:13px;color:#d0d5dd;line-height:1.45}.mini-summary button{margin-top:12px;background:#fff;color:#101828;border:none;border-radius:10px;padding:9px 12px;font-weight:850}.banner{position:fixed;left:24px;right:24px;bottom:22px;background:#fff;border:1px solid #dce2ea;border-radius:4px;box-shadow:0 20px 55px rgba(15,23,42,.2);z-index:15;display:grid;grid-template-columns:1fr auto;gap:24px;padding:24px 28px;align-items:center}.banner h2{font-size:25px;letter-spacing:-.7px;margin-bottom:8px}.banner p{font-size:14px;color:#475467;line-height:1.55;max-width:850px}.banner-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.banner .text-btn{border:none;background:transparent;color:var(--vx-pink);font-weight:900;letter-spacing:.06em;font-size:13px;text-transform:uppercase}.banner .outline{background:#fff;border:1px solid #475467;border-radius:0;min-width:150px}.banner .pink{background:var(--vx-pink);color:#fff;border:1px solid var(--vx-pink);border-radius:0;min-width:170px}
+    .guide{max-width:1180px;margin:0 auto 80px;padding:0 24px}.guide-card{background:#fff;border:1px solid #e7ebf2;border-radius:24px;padding:26px;box-shadow:0 10px 28px rgba(15,23,42,.06)}.guide-card h2{font-size:28px;margin-bottom:18px}.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.rule{border:1px solid #e4e8ef;border-left:4px solid var(--vx-blue);border-radius:14px;padding:16px;background:#fbfcff}.rule b{display:block;margin-bottom:6px}.rule p{font-size:13.5px;line-height:1.6;color:#586174}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:40px}.hero h1{font-size:40px}.product-note,.rules{grid-template-columns:1fr}.banner{grid-template-columns:1fr}.modal-header,.panel{padding-left:24px;padding-right:24px}.footer-actions{grid-template-columns:1fr}.tabs{grid-template-columns:1fr}.tab{height:52px}.nav{display:none}}
+  </style>
+</head>
+<body>
+  <main class="site" aria-hidden="false">
+    <header class="topbar">
+      <div class="brand"><div class="logo">V</div> vexere.com</div>
+      <nav class="nav"><span>Tuyến xe</span><span>Đơn hàng</span><span>Hỗ trợ</span><span>Đăng nhập</span></nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Cookie consent<br/></h1>
+        <p>Demo này minh họa cách Vexere có thể trình bày cookie banner và trung tâm quản lý cookie theo hướng gần với các website lớn: thông tin được tách lớp, lựa chọn dễ thấy, và người dùng hiểu rõ nhóm cookie nào sẽ được bật trước khi đưa ra quyết định.</p>
+        <div class="hero-actions">
+          <button class="btn primary" onclick="openModal('declaration')">Mở trung tâm Cookie</button>
+          <button class="btn secondary" onclick="resetConsent()">Hiện lại banner</button>
+        </div>
+      </div>
+      <div class="mock-card">
+        <div class="route-card">
+          <h2>Đặt vé an toàn</h2>
+          <p>Cookie cần thiết giúp phiên đăng nhập và giao dịch hoạt động ổn định. Các cookie khác chỉ nên dùng khi người dùng lựa chọn.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-note">
+      <div class="note"><b>1. “Chấp nhận tất cả” cần đi kèm thông tin đủ</b><p>Nút “Chấp nhận tất cả” nếu được sử dụng cần đi kèm thông tin đủ rõ về các nhóm cookie sẽ được bật, mục đích chính của từng nhóm và khả năng thay đổi lựa chọn sau này.</p></div>
+      <div class="note"><b>2. Từ chối và tùy chỉnh phải dễ thấy</b><p>Không nên buộc người dùng đi qua nhiều lớp mới từ chối được cookie không cần thiết. Lựa chọn từ chối nên nằm ngay ở banner hoặc trong modal đầu tiên.</p></div>
+      <div class="note"><b>3. Cookie cần thiết không nên trình bày như consent</b><p>Vì đây là nhóm cần cho website vận hành, nên dùng nhãn “Luôn bật” thay vì toggle đã bật sẵn khiến người dùng hiểu nhầm là có thể/đã đồng ý.</p></div>
+    </section>
+
+    <section class="guide">
+      <div class="guide-card">
+        <h2>Ghi chú cho Product team</h2>
+        <div class="rules">
+          <div class="rule"><b>Không dùng pre-tick cho optional cookie</b><p>Cookie phân tích, quảng cáo hoặc cá nhân hóa nên mặc định tắt cho đến khi người dùng có hành động đồng ý rõ ràng.</p></div>
+          <div class="rule"><b>Cookie cần thiết: giải thích, không xin đồng ý</b><p>Thiết kế nên thể hiện đây là nhóm vận hành bắt buộc, ví dụ bảo mật phiên, đăng nhập, ghi nhớ giao dịch đang thực hiện.</p></div>
+          <div class="rule"><b>CTA phải cân bằng ở mức hợp lý</b><p>Nếu nút “Chấp nhận tất cả” được đặt nổi bật, phần mô tả cần đủ rõ để người dùng biết họ đang chấp nhận nhóm cookie nào; đồng thời “Từ chối” và “Tùy chỉnh” phải dễ thấy, dễ hiểu và không bị đặt ở vị trí gây nhầm lẫn.</p></div>
+          <div class="rule"><b>Có cơ chế thay đổi lựa chọn sau này</b><p>Người dùng nên có thể vào footer hoặc Privacy Center để mở lại phần Quản lý cookie và cập nhật lựa chọn.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- First layer cookie banner -->
+  <aside class="banner" id="banner">
+    <div>
+      <h2>Tùy chọn quyền riêng tư</h2>
+      <p>Vexere dùng cookie để website hoạt động ổn định. Cookie phân tích và cá nhân hóa chỉ được sử dụng khi bạn đồng ý. Bạn có thể xem chi tiết hoặc thay đổi lựa chọn bất kỳ lúc nào trong phần Quản lý cookie. Tìm hiểu thêm trong Chính sách bảo mật của chúng tôi.</p>
+    </div>
+    <div class="banner-actions">
+      <button class="btn text-btn" onclick="openModal('declaration')">⚙ Quản lý tùy chọn</button>
+      <button class="btn outline" onclick="declineAll()">Từ chối</button>
+      <button class="btn pink" onclick="acceptAll()">Chấp nhận tất cả</button>
+    </div>
+  </aside>
+
+  <!-- Cookie preference modal -->
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <button class="x" onclick="closeModal()" aria-label="Đóng">×</button>
+        <h2 class="modal-title" id="modalTitle">Tùy chọn quyền riêng tư</h2>
+        <p class="modal-desc">Vexere dùng cookie để website hoạt động ổn định, cải thiện trải nghiệm, phân tích lưu lượng truy cập và cá nhân hóa nội dung khi bạn đồng ý. Bạn có thể thay đổi lựa chọn bất kỳ lúc nào trong phần Quản lý cookie.</p>
+      </div>
+      <div class="tabs">
+        <button class="tab active" id="tabDeclaration" onclick="switchTab('declaration')">Khai báo Cookie</button>
+        <button class="tab" id="tabAbout" onclick="switchTab('about')">Về Cookie</button>
+      </div>
+
+      <section class="panel" id="panelDeclaration">
+        <article class="category">
+          <div class="cat-main">
+            <div>
+              <div class="cat-title">Cookie cần thiết</div>
+              <p class="cat-desc">Các cookie này giúp website hoạt động ổn định, ví dụ đăng nhập, bảo mật phiên, ghi nhớ giao dịch đang thực hiện hoặc duy trì chức năng đặt vé.</p>
+              <button class="show-cookies" onclick="toggleTable('necessaryTable', this)">Hiện cookie ˅</button>
+              <div class="cookie-table" id="necessaryTable">
+                <table>
+                  <thead><tr><th>Tên</th><th>Nhà cung cấp / Tên miền</th><th>Thời hạn</th><th>Mô tả</th></tr></thead>
+                  <tbody>
+                    <tr><td>vx_session</td><td>vexere.com</td><td>Phiên truy cập</td><td>Duy trì phiên đăng nhập và trạng thái đặt vé.</td></tr>
+                    <tr><td>csrf_token</td><td>vexere.com</td><td>Phiên truy cập</td><td>Hỗ trợ bảo vệ biểu mẫu và giao dịch khỏi truy cập không hợp lệ.</td></tr>
+                    <tr><td>booking_state</td><td>vexere.com</td><td>30 phút</td><td>Ghi nhớ bước đặt vé đang thực hiện để tránh mất dữ liệu khi tải lại trang.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <span class="status-chip locked">Luôn bật</span>
+          </div>
+        </article>
+
+        <article class="category">
+          <div class="cat-main">
+            <div>
+              <div class="cat-title">Cookie hiệu năng</div>
+              <p class="cat-desc">Giúp Vexere hiểu cách người dùng sử dụng website, ví dụ trang nào được xem nhiều hoặc bước nào dễ phát sinh lỗi, để cải thiện trải nghiệm.</p>
+              <button class="show-cookies" onclick="toggleTable('performanceTable', this)">Hiện cookie ˅</button>
+              <div class="cookie-table" id="performanceTable">
+                <table>
+                  <thead><tr><th>Tên</th><th>Nhà cung cấp / Tên miền</th><th>Thời hạn</th><th>Mô tả</th></tr></thead>
+                  <tbody>
+                    <tr><td>_ga</td><td>analytics provider</td><td>13 tháng</td><td>Đo lường số lượt truy cập và hành vi tổng hợp trên website.</td></tr>
+                    <tr><td>_gid</td><td>analytics provider</td><td>24 giờ</td><td>Phân biệt phiên truy cập ở mức thống kê.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <label class="toggle" title="Cookie hiệu năng"><input id="performance" type="checkbox"/><span></span></label>
+          </div>
+        </article>
+
+        <article class="category">
+          <div class="cat-main">
+            <div>
+              <div class="cat-title">Cookie cá nhân hóa</div>
+              <p class="cat-desc">Giúp ghi nhớ một số lựa chọn hiển thị hoặc đề xuất nội dung phù hợp hơn, ví dụ tuyến đường quan tâm hoặc ngôn ngữ ưu tiên.</p>
+              <button class="show-cookies" onclick="toggleTable('functionalTable', this)">Hiện cookie ˅</button>
+              <div class="cookie-table" id="functionalTable">
+                <table>
+                  <thead><tr><th>Tên</th><th>Nhà cung cấp / Tên miền</th><th>Thời hạn</th><th>Mô tả</th></tr></thead>
+                  <tbody>
+                    <tr><td>vx_locale</td><td>vexere.com</td><td>6 tháng</td><td>Ghi nhớ ngôn ngữ hoặc vùng hiển thị đã chọn.</td></tr>
+                    <tr><td>recent_route</td><td>vexere.com</td><td>30 ngày</td><td>Gợi ý lại tuyến đường đã tìm kiếm gần đây.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <label class="toggle" title="Cookie cá nhân hóa"><input id="functional" type="checkbox"/><span></span></label>
+          </div>
+        </article>
+
+        <article class="category">
+          <div class="cat-main">
+            <div>
+              <div class="cat-title">Cookie quảng cáo</div>
+              <p class="cat-desc">Hỗ trợ đo lường hiệu quả chiến dịch và hiển thị nội dung quảng cáo phù hợp hơn trên các kênh của Vexere hoặc đối tác quảng cáo.</p>
+              <button class="show-cookies" onclick="toggleTable('targetingTable', this)">Hiện cookie ˅</button>
+              <div class="cookie-table" id="targetingTable">
+                <table>
+                  <thead><tr><th>Tên</th><th>Nhà cung cấp / Tên miền</th><th>Thời hạn</th><th>Mô tả</th></tr></thead>
+                  <tbody>
+                    <tr><td>ads_id</td><td>advertising partner</td><td>3 tháng</td><td>Đo lường hiệu quả quảng cáo và giới hạn tần suất hiển thị.</td></tr>
+                    <tr><td>campaign_ref</td><td>vexere.com</td><td>30 ngày</td><td>Ghi nhận nguồn chiến dịch dẫn đến lượt truy cập hoặc đơn hàng.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <label class="toggle" title="Cookie quảng cáo"><input id="targeting" type="checkbox"/><span></span></label>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel" id="panelAbout" style="display:none">
+        <div class="about-text">
+          <p>Cookie là các tệp nhỏ được lưu trên thiết bị khi bạn truy cập website.</p>
+          <p>Một số cookie giúp website hoạt động ổn định và bảo mật.</p>
+          <p>Các cookie khác giúp Vexere phân tích lưu lượng truy cập và cải thiện trải nghiệm sử dụng.</p>
+          <p>Bạn có thể thay đổi lựa chọn cookie bất kỳ lúc nào trong phần Quản lý cookie.</p>
+        </div>
+      </section>
+
+      <footer class="footer-actions">
+        <button class="action" onclick="declineAll()">Từ chối</button>
+        <button class="action save" onclick="saveChoices()">Lưu & đóng</button>
+        <button class="action accept" onclick="acceptAll()">Chấp nhận tất cả</button>
+      </footer>
+    </div>
+  </div>
+
+  <div class="mini-summary" id="summary">
+    <b id="summaryTitle">Đã lưu lựa chọn cookie</b>
+    <p id="summaryText">Bạn có thể mở lại phần Quản lý cookie để thay đổi lựa chọn bất kỳ lúc nào.</p>
+    <button onclick="openModal('declaration')">Quản lý cookie</button>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const banner = document.getElementById('banner');
+    const summary = document.getElementById('summary');
+
+    function openModal(tab){
+      overlay.classList.add('show');
+      switchTab(tab || 'declaration');
+    }
+    function closeModal(){ overlay.classList.remove('show'); }
+    function switchTab(tab){
+      const isAbout = tab === 'about';
+      document.getElementById('panelDeclaration').style.display = isAbout ? 'none' : 'block';
+      document.getElementById('panelAbout').style.display = isAbout ? 'block' : 'none';
+      document.getElementById('tabDeclaration').classList.toggle('active', !isAbout);
+      document.getElementById('tabAbout').classList.toggle('active', isAbout);
+    }
+    function toggleTable(id, btn){
+      const table = document.getElementById(id);
+      table.classList.toggle('open');
+      btn.textContent = table.classList.contains('open') ? 'Ẩn cookie ˄' : 'Hiện cookie ˅';
+    }
+    function setOptional(value){
+      ['performance','functional','targeting'].forEach(id => document.getElementById(id).checked = value);
+    }
+    function acceptAll(){
+      setOptional(true);
+      persist('all');
+      showSummary('Đã chấp nhận tất cả cookie', 'Các nhóm cookie cần thiết, hiệu năng, cá nhân hóa và quảng cáo đang được bật. Bạn có thể thay đổi lựa chọn bất kỳ lúc nào.');
+    }
+    function declineAll(){
+      setOptional(false);
+      persist('necessary-only');
+      showSummary('Đã từ chối cookie không cần thiết', 'Chỉ cookie cần thiết để website hoạt động ổn định được duy trì.');
+    }
+    function saveChoices(){
+      const selected = ['performance','functional','targeting'].filter(id => document.getElementById(id).checked);
+      persist('custom');
+      const label = selected.length ? selected.map(v => ({performance:'hiệu năng', functional:'cá nhân hóa', targeting:'quảng cáo'}[v])).join(', ') : 'không có nhóm optional nào';
+      showSummary('Đã lưu lựa chọn cookie', 'Lựa chọn optional hiện tại: ' + label + '. Bạn có thể thay đổi lại bất kỳ lúc nào.');
+    }
+    function persist(type){
+      localStorage.setItem('vexereCookieConsentDemo', JSON.stringify({
+        type,
+        performance:document.getElementById('performance').checked,
+        functional:document.getElementById('functional').checked,
+        targeting:document.getElementById('targeting').checked,
+        timestamp:new Date().toISOString(),
+        version:'cookie-demo-v2'
+      }));
+      banner.style.display='none';
+      closeModal();
+    }
+    function showSummary(title, text){
+      document.getElementById('summaryTitle').textContent = title;
+      document.getElementById('summaryText').textContent = text;
+      summary.classList.add('show');
+      setTimeout(()=>summary.classList.remove('show'), 6500);
+    }
+    function resetConsent(){
+      localStorage.removeItem('vexereCookieConsentDemo');
+      setOptional(false);
+      banner.style.display='grid';
+      summary.classList.remove('show');
+    }
+    window.addEventListener('load',()=>{
+      const saved = localStorage.getItem('vexereCookieConsentDemo');
+      if(saved){
+        try{
+          const data = JSON.parse(saved);
+          document.getElementById('performance').checked = !!data.performance;
+          document.getElementById('functional').checked = !!data.functional;
+          document.getElementById('targeting').checked = !!data.targeting;
+          banner.style.display='none';
+        }catch(e){ banner.style.display='grid'; }
+      }
+    });
+    overlay.addEventListener('click', e=>{ if(e.target === overlay) closeModal(); });
+  </script>
+</body>
+</html>

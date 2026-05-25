@@ -73,16 +73,17 @@
           <div class="rule"><b>Cookie cần thiết: giải thích, không xin đồng ý</b><p>Thiết kế nên thể hiện đây là nhóm vận hành bắt buộc, ví dụ bảo mật phiên, đăng nhập, ghi nhớ giao dịch đang thực hiện.</p></div>
           <div class="rule"><b>CTA phải cân bằng ở mức hợp lý</b><p>Nếu nút “Chấp nhận tất cả” được đặt nổi bật, phần mô tả cần đủ rõ để người dùng biết họ đang chấp nhận nhóm cookie nào; đồng thời “Từ chối” và “Tùy chỉnh” phải dễ thấy, dễ hiểu và không bị đặt ở vị trí gây nhầm lẫn.</p></div>
           <div class="rule"><b>Có cơ chế thay đổi lựa chọn sau này</b><p>Người dùng nên có thể vào footer hoặc Privacy Center để mở lại phần Quản lý cookie và cập nhật lựa chọn.</p></div>
+          <div class="rule"><b>Cookie cá nhân hóa có thể liên quan dữ liệu nhạy cảm</b><p>Nếu cookie được dùng để theo dõi hành vi sử dụng, xây dựng sở thích, lịch sử tìm kiếm hoặc đề xuất nội dung theo từng người dùng, thì dữ liệu này có thể bị xem là “dữ liệu theo dõi hành vi” theo Luật Bảo vệ dữ liệu cá nhân. Vì vậy cần: (i) mặc định tắt cho đến khi có consent; (ii) thông báo rõ đây có thể là dữ liệu cá nhân nhạy cảm; (iii) tránh wording gây hiểu nhầm rằng đây chỉ là preference kỹ thuật đơn giản.</p></div>
         </div>
       </div>
     </section>
   </main>
 
   <!-- First layer cookie banner -->
-  <aside class="banner" id="banner">
+  <aside class="banner" id="banner"> 
     <div>
       <h2>Tùy chọn quyền riêng tư</h2>
-      <p>Vexere dùng cookie để website hoạt động ổn định. Cookie phân tích và cá nhân hóa chỉ được sử dụng khi bạn đồng ý. Bạn có thể xem chi tiết hoặc thay đổi lựa chọn bất kỳ lúc nào trong phần Quản lý cookie. Tìm hiểu thêm trong Chính sách bảo mật của chúng tôi.</p>
+      <p>Vexere dùng cookie để website hoạt động ổn định. Bạn có thể xem chi tiết hoặc thay đổi lựa chọn bất kỳ lúc nào trong phần Quản lý cookie. Tìm hiểu thêm trong Chính sách bảo mật của chúng tôi.</p>
     </div>
     <div class="banner-actions">
       <button class="btn text-btn" onclick="openModal('declaration')">⚙ Quản lý tùy chọn</button>
@@ -130,7 +131,10 @@
           <div class="cat-main">
             <div>
               <div class="cat-title">Cookie hiệu năng</div>
-              <p class="cat-desc">Giúp Vexere hiểu cách người dùng sử dụng website, ví dụ trang nào được xem nhiều hoặc bước nào dễ phát sinh lỗi, để cải thiện trải nghiệm.</p>
+              <p class="cat-desc">
+                Giúp Vexere hiểu cách người dùng sử dụng website, ví dụ trang nào được xem nhiều hoặc bước nào dễ phát sinh lỗi, để cải thiện trải nghiệm.
+                Một số dữ liệu sử dụng cho mục đích phân tích hành vi có thể được pháp luật xem là dữ liệu cần bảo vệ hoặc áp dụng biện pháp bảo mật chặt chẽ.
+              </p>
               <button class="show-cookies" onclick="toggleTable('performanceTable', this)">Hiện cookie ˅</button>
               <div class="cookie-table" id="performanceTable">
                 <table>
@@ -150,7 +154,10 @@
           <div class="cat-main">
             <div>
               <div class="cat-title">Cookie cá nhân hóa</div>
-              <p class="cat-desc">Giúp ghi nhớ một số lựa chọn hiển thị hoặc đề xuất nội dung phù hợp hơn, ví dụ tuyến đường quan tâm hoặc ngôn ngữ ưu tiên.</p>
+              <p class="cat-desc">
+                Giúp ghi nhớ lựa chọn hiển thị và đề xuất nội dung phù hợp hơn dựa trên hành vi sử dụng, ví dụ tuyến đường quan tâm hoặc ngôn ngữ ưu tiên.
+                Dữ liệu này có thể bao gồm dữ liệu theo dõi hành vi và được xem là dữ liệu cá nhân nhạy cảm theo quy định pháp luật. Việc xử lý chỉ được thực hiện khi bạn đồng ý.
+              </p>
               <button class="show-cookies" onclick="toggleTable('functionalTable', this)">Hiện cookie ˅</button>
               <div class="cookie-table" id="functionalTable">
                 <table>
@@ -170,7 +177,10 @@
           <div class="cat-main">
             <div>
               <div class="cat-title">Cookie quảng cáo</div>
-              <p class="cat-desc">Hỗ trợ đo lường hiệu quả chiến dịch và hiển thị nội dung quảng cáo phù hợp hơn trên các kênh của Vexere hoặc đối tác quảng cáo.</p>
+              <p class="cat-desc">
+                Hỗ trợ đo lường hiệu quả chiến dịch và hiển thị nội dung quảng cáo phù hợp hơn trên các kênh của Vexere hoặc đối tác quảng cáo.
+                Cookie này có thể sử dụng dữ liệu về hành vi sử dụng dịch vụ trên không gian mạng để cá nhân hóa quảng cáo. Theo quy định pháp luật, một số dữ liệu theo dõi hành vi có thể được xem là dữ liệu cá nhân nhạy cảm. Việc xử lý chỉ được thực hiện khi bạn đồng ý
+              </p>
               <button class="show-cookies" onclick="toggleTable('targetingTable', this)">Hiện cookie ˅</button>
               <div class="cookie-table" id="targetingTable">
                 <table>
